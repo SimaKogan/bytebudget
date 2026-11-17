@@ -1,0 +1,22 @@
+{
+  "name": "bytebudget",
+  "version": "1.1.0",
+  "description": "Keep your JavaScript within a size budget. Fails CI when a bundle grows too much.",
+  "keywords": ["bundle", "size", "budget", "performance", "gzip", "brotli", "ci"],
+  "license": "MIT",
+  "author": "Sima Kogan <serafima.kogan@gmail.com>",
+  "repository": { "type": "git", "url": "git+https://github.com/SimaKogan/bytebudget.git" },
+  "bin": { "bytebudget": "bin/bytebudget.js" },
+  "main": "src/index.js",
+  "files": ["bin", "src"],
+  "engines": { "node": ">=16" },
+  "scripts": {
+    "test": "node --test",
+    "demo": "node bin/bytebudget.js --config examples/bytebudget.config.json --html examples/report.html"
+  },
+  "bytebudget": {
+    "budgets": [
+      { "name": "CLI + core (self check)", "path": ["bin/*.js", "src/*.js"], "limit": "10 kB", "mode": "gzip" }
+    ]
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "budgets": [
+    { "name": "main",   "path": "examples/dist/main.js",   "limit": "8 kB",  "mode": "gzip" },
+    { "name": "vendor", "path": "examples/dist/vendor.js", "limit": "30 kB", "mode": "brotli" },
+    { "name": "admin",  "path": "examples/dist/admin.js",  "limit": "10 kB", "mode": "gzip" },
+    { "name": "all scripts", "path": "examples/dist/**/*.js", "limit": "100 kB", "mode": "raw" }
+  ]
+}
